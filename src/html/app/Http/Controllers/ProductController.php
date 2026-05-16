@@ -6,38 +6,59 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        return 'Show all products';
+        //
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create()
     {
-        return 'Show form for create product';
+        //
     }
 
-    public function store()
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
     {
-        return 'Store product';
+        //
     }
 
-    public function show($product)
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
     {
-        return 'Show product ' . $product;
+        //
     }
 
-    public function edit($product)
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
     {
-        return 'Show form for edit product ' . $product;
+        //
     }
 
-    public function update($product)
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
     {
-        return 'Update product ' . $product;
+        //
     }
 
-    public function delete($product)
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
     {
-        return 'Delete product ' . $product;
+        //
     }
 }
