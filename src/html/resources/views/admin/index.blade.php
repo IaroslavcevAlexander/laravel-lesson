@@ -8,6 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hi, i am`Alexander</h1>
+
+<h1>Admin main page</h1>
+
 </body>
 </html>
