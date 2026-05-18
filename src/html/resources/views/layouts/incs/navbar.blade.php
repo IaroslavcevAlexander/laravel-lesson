@@ -21,5 +21,9 @@
                 </li>
             </ul>
         </div>
+
+        {{ $random_joke }}
+
+        {{ $users_cnt }}
     </div>
 </nav>
