@@ -31,9 +31,9 @@ class AppServiceProvider extends ServiceProvider
 //        View::composer(['user.*'], UserComposer::class);
 //        View::composer(['*'], UserComposer::class);
 //        View::composer(['layouts.incs.navbar'], UserComposer::class);
-        View::composer(['*'], function (\Illuminate\View\View $view) {
-            $view->with('users_cnt', 125);
-        });
+//        View::composer(['*'], function (\Illuminate\View\View $view) {
+//            $view->with('users_cnt', 125);
+//        });
     }
 
     protected function getRandomJoke(): string

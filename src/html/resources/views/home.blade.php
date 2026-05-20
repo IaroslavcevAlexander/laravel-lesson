@@ -6,8 +6,6 @@
 
     <div class="container">
         <h1>Home</h1>
-
-        {{ $users_cnt }}
     </div>
 
 @endsection

@@ -1,7 +1,9 @@
 services:
   app:
     user: "1000:1000"
-    image: php:8.3-fpm
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
     working_dir: /var/www
     volumes:
       - ./src:/var/www

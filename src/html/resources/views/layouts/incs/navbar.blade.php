@@ -19,11 +19,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('posts.index') }}">Posts</a>
+                </li>
             </ul>
         </div>
 
         {{ $random_joke }}
-
-        {{ $users_cnt }}
     </div>
 </nav>
