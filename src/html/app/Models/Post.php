@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
 //    protected $table = 'posts';
 //    protected $primaryKey = 'id';
@@ -16,5 +17,8 @@ class Post extends Model
 //    public $timestamps = false;
 //    const string CREATED_AT = 'created_date';
 //    const string UPDATED_AT = 'updated_date';
+
+    protected $fillable = ['title','slug', 'content'];
+//    protected $guarded = [];
 
 }

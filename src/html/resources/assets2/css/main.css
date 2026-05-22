@@ -1,7 +1,11 @@
 * {
-    background: #fff6;
+    background: transparent;
 }
 
 body {
-    background: #fff6;
+    background: transparent;
+}
+
+body .sf-dump {
+    background: #00783a;
 }

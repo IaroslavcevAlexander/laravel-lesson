@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/html" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/src/html/storage/app" />
       <excludeFolder url="file://$MODULE_DIR$/src/html/storage/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/src/html/storage/debugbar" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
