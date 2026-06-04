@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Category;
+use app\Models\Post;
 
 class HomeController extends Controller
 {
@@ -17,7 +18,26 @@ class HomeController extends Controller
 //            ]);
 //        }
 
-        return view('home');
+//        $category = Category::find(4);
+//        dump($category);
+//
+//
+//        foreach ($category->posts as $post) {
+//            dump($post->title);
+//        }
+
+//        $post = Post::find(2);
+//        foreach ($post->categories as $category) {
+//            dump($category->title);
+//        }
+
+//        $post = Post::with('categories')->find(1);
+//        dump($post);
+
+        $posts = Post::with('categories')->get();
+
+        dump($posts);
+        return view('home', compact('posts'));
     }
 
 }
