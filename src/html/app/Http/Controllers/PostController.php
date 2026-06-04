@@ -50,10 +50,16 @@ class PostController extends Controller
 
 //        dump(Post::withTrashed()->find(23)->restore());
 //        dump(Post::onlyTrashed()->get());
-//
+//        $post = Post::query()->find(10);
+//        dump($post->comments);
+
+//        foreach ($post->comments as $comment) {
+//          dump($comment->content);
+//        }
+
         $posts = Post::all();
 
-        Post::forceDestroy([27,28]);
+//        Post::forceDestroy([27,28]);
 
         return view('posts.index', [
             'title' => 'список статей',

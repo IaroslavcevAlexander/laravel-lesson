@@ -11,6 +11,10 @@
             <H3>
                 {{ $post->title }}
             </H3>
+
+            @foreach($post->comments as $comment)
+                <div>{{$comment->content}}</div>
+            @endforeach
         @endforeach
     </div>
 
