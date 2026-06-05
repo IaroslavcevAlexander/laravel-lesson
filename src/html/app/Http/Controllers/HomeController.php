@@ -34,6 +34,11 @@ class HomeController extends Controller
 //        $post = Post::with('categories')->find(1);
 //        dump($post);
 
+        $post = Post::find(3);
+
+//        $post->categories()->attach([2, 4]);
+        $post-> categories()->detach(2);
+
         $posts = Post::with('categories')->get();
 
         dump($posts);
