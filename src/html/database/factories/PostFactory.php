@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
-use app\Models\Post;
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class PostFactory extends Factory
 {
@@ -12,7 +13,10 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-
+            'title' => $title = Str::ucfirst(fake()->unique()->words(3, true)),
+            'slug' => Str::slug($title),
+            'content' => fake()->paragraph(),
+            'category_id' => fake()->numberBetween(1, 10),
         ];
     }
 }

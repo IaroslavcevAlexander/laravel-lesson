@@ -18,11 +18,12 @@
                 </div>
 
                 <div class="card-footer">
-                    @forelse($post->categories as $category)
-                        {{ $category->title }}@if(!$loop->last),@endif
-                    @empty
-                        - - - -
-                    @endforelse
+                    Category: {{ $post->category->title }}
+{{--                    @forelse($post->categories as $category)--}}
+{{--                        {{ $category->title }}@if(!$loop->last),@endif--}}
+{{--                    @empty--}}
+{{--                        - - - ---}}
+{{--                    @endforelse--}}
                 </div>
             </div>
         @endforeach
