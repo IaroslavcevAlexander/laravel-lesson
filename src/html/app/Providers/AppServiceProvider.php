@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\View\Composers\UserComposer;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Paginator::useBootstrapFive();
         Route::pattern('slug', '[a-z0-9]+');
 
 //        View::share('random_joke', $this->getRandomJoke());
