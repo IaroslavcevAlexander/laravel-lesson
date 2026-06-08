@@ -10,12 +10,28 @@
                <div class="col-md-6 offset-md-3">
                    <h1>Register</h1>
 
+                   @if ($errors->any())
+                       <div class="alert alert-danger">
+                           <ul>
+                               @foreach ($errors->all() as $error)
+                                   <li>{{ $error }}</li>
+                               @endforeach
+                           </ul>
+                       </div>
+                   @endif
+
+                   @if (session()->has('success'))
+                       <div class="alert alert-success">
+                           {{ session('success') }}
+                       </div>
+                   @endif
+
                    <form action="{{ route('register.store') }}" method="post">
                        @csrf
 
                        <div class="mb-3">
                            <label for="name" class="form-label">Name</label>
-                           <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{ old('name') }}">
+                           <input type="text" class="form-control @error('name')is-invalid @enderror" id="name" name="name" placeholder="Name" value="{{ old('name') }}">
                        </div>
 
                        <div class="mb-3">
@@ -25,7 +41,7 @@
 
                        <div class="mb-3">
                            <label for="password" class="form-label">Password</label>
-                           <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                           <input type="password" class="form-control @error('name')is-invalid @enderror" id="password" name="password" placeholder="Password">
                        </div>
 
                        <div class="mb-3">
@@ -41,10 +57,6 @@
                        </div>
 
                        <button type="submit" class="btn btn-warning">Register</button>
-
-                       @php
-                           dump(request()->old())
-                       @endphp
                    </form>
                </div>
            </div>
