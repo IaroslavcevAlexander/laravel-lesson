@@ -5,26 +5,50 @@
 @section('content')
 
     <div class="container">
-        <h1>Register</h1>
+       <div class="row">
+           <div class="mb-3">
+               <div class="col-md-6 offset-md-3">
+                   <h1>Register</h1>
 
-        {{ $name }} - {!! $name !!}
+                   <form action="{{ route('register.store') }}" method="post">
+                       @csrf
 
-        <p>Now: {{date("Y-m-d H:i")}}</p>
+                       <div class="mb-3">
+                           <label for="name" class="form-label">Name</label>
+                           <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{ old('name') }}">
+                       </div>
 
+                       <div class="mb-3">
+                           <label for="email" class="form-label">Email</label>
+                           <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                       </div>
 
-        @if (!empty($users))
-            @foreach($users as $user)
-                <h4>{{ $user['id'] }} - {{ $user['name'] }}</h4>
-                <p>{{ $loop->index }} - {{ $loop->iteration }} - {{ $loop->count }}</p>
+                       <div class="mb-3">
+                           <label for="password" class="form-label">Password</label>
+                           <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                       </div>
 
-            @endforeach
+                       <div class="mb-3">
+                           <label for="password_confirmation" class="form-label">Password Confirmation</label>
+                           <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Password Confirmation">
+                       </div>
 
-        @else
-            <p>
-                no users..
-            </p>
+                       <div class="form-check mb-3">
+                           <input name="agree" class="form-check-input" type="checkbox" id="agree">
+                           <label class="form-check-label" for="agree">
+                               Agree
+                           </label>
+                       </div>
 
-        @endif
+                       <button type="submit" class="btn btn-warning">Register</button>
+
+                       @php
+                           dump(request()->old())
+                       @endphp
+                   </form>
+               </div>
+           </div>
+       </div>
     </div>
 
 @endsection
