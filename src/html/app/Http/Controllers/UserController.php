@@ -84,6 +84,7 @@ class UserController extends Controller
 
     public function index()
     {
+        dump(session('test'));
         $users = User::paginate();
         return view('user.index', [
             'title' => 'Users list',
