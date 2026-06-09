@@ -26,7 +26,8 @@
                        </div>
                    @endif
 
-                   <form action="{{ route('register.store') }}" method="post">
+                   {{ asset('storage/images/2026/06/09/77oQ11QdWTp2a0TJ1bQzuH6GU13zwj81rxrmSpio.jpg') }}
+                   <form action="{{ route('register.store') }}" method="post" enctype="multipart/form-data">
                        @csrf
 
                        <div class="mb-3">
@@ -47,6 +48,11 @@
                        <div class="mb-3">
                            <label for="password_confirmation" class="form-label">Password Confirmation</label>
                            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Password Confirmation">
+                       </div>
+
+                       <div class="mb-3">
+                           <label for="avatar" class="form-label">Avatar</label>
+                           <input name="avatar" type="file" class="form-control" id="avatar" placeholder="Avatar">
                        </div>
 
                        <div class="form-check mb-3">
